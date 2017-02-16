@@ -11,7 +11,7 @@ namespace triangle
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Привет");
-            Console.WriteLine("Привет из Универа");
+            		Console.WriteLine("Привет из Универа");
 
 			Point x1 = new Point(0, 0); // Равнобедренный (площадь 40)
 			Point y1 = new Point(10, 0);
