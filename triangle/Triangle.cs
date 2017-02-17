@@ -8,21 +8,40 @@ namespace triangle
 {
 	class Triangle
 	{
-		private Point a;
-		private Point b;
-		private Point c;
-		private Edge edgeA;
-		private Edge edgeB;
-		private Edge edgeC;
+		public readonly Point A;
+		public readonly Point B;
+		public readonly Point C;
+		public Edge edgeA
+		{
+			get { return new Edge(this.B, this.C); }
+		}
+		public Edge edgeB
+		{
+			get { return new Edge(this.A, this.C); }
+		}
+		public Edge edgeC
+		{
+			get { return new Edge(this.A, this.B); }
+		}
+
+
 
 		public Triangle(Point a, Point b, Point c)
 		{
-			this.a = a;
-			this.b = b;
-			this.c = c;
-			this.edgeA = new Edge(this.b, this.c);
-			this.edgeB = new Edge(this.a, this.c);
-			this.edgeC = new Edge(this.a, this.b);
+			this.A = a;
+			this.B = b;
+			this.C = c;
+			try
+			{
+				if ((this.edgeA.Length + this.edgeB.Length <= this.edgeC.Length)
+					|| (this.edgeB.Length + this.edgeC.Length <= this.edgeA.Length)
+					|| (this.edgeA.Length + this.edgeC.Length <= this.edgeB.Length))
+					throw new ArgumentException("Вырожденный треугольник");
+			}
+			catch (ArgumentException error)
+			{
+				Console.WriteLine(error.Message);
+			}
 		}
 
 

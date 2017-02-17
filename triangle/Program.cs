@@ -11,7 +11,6 @@ namespace triangle
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Привет");
-            		Console.WriteLine("Привет из Универа");
 
 			Point x1 = new Point(0, 0); // Равнобедренный (площадь 40)
 			Point y1 = new Point(10, 0);
@@ -33,6 +32,10 @@ namespace triangle
 			Point y5 = new Point(0, 8);
 			Point z5 = new Point(5, 4);
 
+			Point x6 = new Point(10, 0); // Вырожденный
+			Point y6 = new Point(10, 10);
+			Point z6 = new Point(10, 20);
+
 			Triangle[] triangleArray = new Triangle[]
 			{
 				new Triangle(x1, y1, z1),
@@ -40,6 +43,7 @@ namespace triangle
 				new Triangle(x3, y3, z3),
 				new Triangle(x4, y4, z4),
 				new Triangle(x5, y5, z5),
+				new Triangle(x6, y6, z6)
 			};
 
 			double avgPerimetr = 0;

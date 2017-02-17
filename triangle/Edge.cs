@@ -8,21 +8,22 @@ namespace triangle
 {
 	class Edge
 	{
-		public readonly Point a;
-		public readonly Point b;
+		public readonly Point A;
+		public readonly Point B;
 		
 		public Edge(Point a, Point b)
 		{
-			this.a = a;
-			this.b = b;
+			this.A = a;
+			this.B = b;
 		}
+
 
 
 		public double Length
 		{
 			get
 			{
-				return Math.Sqrt( Math.Pow((this.a.x - this.b.x), 2) + Math.Pow((this.a.y - this.b.y), 2));
+				return Math.Sqrt( Math.Pow((this.A.X - this.B.X), 2) + Math.Pow((this.A.Y - this.B.Y), 2));
 			}
 		}
 
