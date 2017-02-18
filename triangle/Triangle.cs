@@ -41,6 +41,8 @@ namespace triangle
 			catch (ArgumentException error)
 			{
 				Console.WriteLine(error.Message);
+				Console.ReadKey();
+				Environment.Exit(0);
 			}
 		}
 

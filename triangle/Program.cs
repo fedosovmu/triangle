@@ -43,7 +43,7 @@ namespace triangle
 				new Triangle(x3, y3, z3),
 				new Triangle(x4, y4, z4),
 				new Triangle(x5, y5, z5),
-				new Triangle(x6, y6, z6)
+				//new Triangle(x6, y6, z6) <-- Вырожденный треугольник
 			};
 
 			double avgPerimetr = 0;
