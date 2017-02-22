@@ -31,19 +31,12 @@ namespace triangle
 			this.A = a;
 			this.B = b;
 			this.C = c;
-			try
-			{
-				if ((this.edgeA.Length + this.edgeB.Length <= this.edgeC.Length)
-					|| (this.edgeB.Length + this.edgeC.Length <= this.edgeA.Length)
-					|| (this.edgeA.Length + this.edgeC.Length <= this.edgeB.Length))
-					throw new ArgumentException("Вырожденный треугольник");
-			}
-			catch (ArgumentException error)
-			{
-				Console.WriteLine(error.Message);
-				Console.ReadKey();
-				Environment.Exit(0);
-			}
+		
+			
+			if ((this.edgeA.Length + this.edgeB.Length <= this.edgeC.Length)
+				|| (this.edgeB.Length + this.edgeC.Length <= this.edgeA.Length)
+				|| (this.edgeA.Length + this.edgeC.Length <= this.edgeB.Length))
+				throw new ArgumentException("Вырожденный треугольник");
 		}
 
 
@@ -90,5 +83,19 @@ namespace triangle
 					(edgeC.Length == edgeB.Length && edgeC.Length != edgeA.Length));
 			}
 		}
+
+
+
+        public static bool operator == (Triangle t1, Triangle t2)
+        {
+            return (t1.A == t2.A) && (t1.B == t2.B) && (t1.C == t2.C);
+        }
+
+
+
+        public static bool operator != (Triangle t1, Triangle t2)
+        {
+            return !(t1 == t2);
+        }
 	}
 }

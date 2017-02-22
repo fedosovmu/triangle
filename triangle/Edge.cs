@@ -27,5 +27,18 @@ namespace triangle
 			}
 		}
 
+
+
+        public static bool operator == (Edge e1, Edge e2)
+        {
+            return (e1.A == e2.A) && (e1.B == e2.B);
+        }
+
+
+        public static bool operator != (Edge e1, Edge e2)
+        {
+            return !(e1 == e2);
+        }
+
 	}
 }
