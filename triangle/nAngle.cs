@@ -19,6 +19,7 @@ namespace triangle
             this.Points = Points;
         }
 
+
         // <- Уже конец пары, Доделаю вечеров
         public double Perimeter
         {
@@ -34,5 +35,16 @@ namespace triangle
             }
         }
 
+
+
+        public double Area
+        {
+            get
+            {
+                for (int i = 0; i < )
+
+                return 0;
+            }
+        }
     }
 }
