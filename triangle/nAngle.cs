@@ -26,11 +26,13 @@ namespace triangle
             get 
             { 
                 double perimeter = 0;
-                for (int i = 0; i < Points.Length - 1; i++)
+                for (int i = 0; i < Points.Length; i++)
                 {
-                    var edge = new Edge(Points[i], Points[i + 1]);
+                    var edge = new Edge(Points[i], Points[(i + 1) % Points.Length]);
                     perimeter += edge.Length;
                 }
+				
+
                 return perimeter; 
             }
         }
@@ -41,9 +43,26 @@ namespace triangle
         {
             get
             {
-                for (int i = 0; i < )
+				double Xsum = 0;
+				double Ysum = 0;
+				for (int i = 0; i < Points.Length; i++)
+				{
+					Xsum += Points[i].X;
+					Ysum += Points[i].Y;
+				}
 
-                return 0;
+				Xsum /= Points.Length;
+				Ysum /= Points.Length;
+				var center = new Point(Xsum, Ysum);
+
+				double area = 0;
+				for (int i = 0; i < Points.Length; i++)
+				{
+					var triangle = new Triangle(Points[i], Points[(i + 1) % Points.Length], center);
+					area += triangle.Area;
+				}
+
+                return area;
             }
         }
     }
