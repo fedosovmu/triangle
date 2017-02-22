@@ -12,7 +12,7 @@ namespace triangle
 
 
 
-        public NAngle(Point[] Points) // <-- здесь должен быть params
+        public NAngle(params Point[] Points) // <-- здесь должен быть params
         {
             if (Points.Length < 3)
                 throw new ArgumentException("В многоугольнике должно быть хотябы 3 точки");
@@ -20,6 +20,19 @@ namespace triangle
         }
 
         // <- Уже конец пары, Доделаю вечеров
+        public double Perimeter
+        {
+            get 
+            { 
+                double perimeter = 0;
+                for (int i = 0; i < Points.Length - 1; i++)
+                {
+                    var edge = new Edge(Points[i], Points[i + 1]);
+                    perimeter += edge.Length;
+                }
+                return perimeter; 
+            }
+        }
 
     }
 }

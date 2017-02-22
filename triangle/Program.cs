@@ -84,8 +84,8 @@ namespace triangle
 
 
 
-            //var nAngle = new NAngle(a3, b4, c5, b2);
-
+            var nAngle = new NAngle(a3, b4, c5, b2);
+            Console.WriteLine("Периметр многоугольника " + nAngle.Perimeter);
 
 
 			Console.ReadKey();
